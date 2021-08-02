@@ -6,3 +6,24 @@ Being able to combine and work with multiple datasets is an essential skill for 
 - Your first inner join
     - taxi_own_veh = taxi_owners.merge(taxi_veh, on='vid', suffixes=('_own','_veh'))
 - Inner joins and number of rows returned
+- One-to-many classification
+    One-to-one:
+        - the relationship between the customers and cust_tax_info
+        - the relationship between the products and inventory
+    One-to-many:
+        - the relationship between the customers and oders
+        - the relationship between the products and orders
+- One-to-many merge
+- Total riders in a month
+- Three table merge
+- One-to-many merge with multiple tables
+    - land_cen_lic = land_use.merge(census, on='ward') \
+                    .merge(licenses, on='ward', suffixes=('_cen','_lic'))
+    - pop_vac_lic = land_cen_lic.groupby(['ward','pop_2010','vacant'], 
+                                   as_index=False).agg({'account':'count'})
+
+## Merging Tables With Different Join Types
+- Counting missing rows with left join
+    - movies_financials = movies.merge(financials, on='id', how='left')
+- Enriching a dataset
+- Note: A left join will return all of the rows from the left table. If those rows in the left table match multiple rows in the right table, then all of those rows will be returned. Therefore, the returned rows must be equal to if not greater than the left table. Knowing what to expect is useful in troubleshooting any suspicious merges.
