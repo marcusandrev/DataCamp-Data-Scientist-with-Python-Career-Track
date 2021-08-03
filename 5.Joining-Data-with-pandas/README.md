@@ -26,4 +26,18 @@ Being able to combine and work with multiple datasets is an essential skill for 
 - Counting missing rows with left join
     - movies_financials = movies.merge(financials, on='id', how='left')
 - Enriching a dataset
-- Note: A left join will return all of the rows from the left table. If those rows in the left table match multiple rows in the right table, then all of those rows will be returned. Therefore, the returned rows must be equal to if not greater than the left table. Knowing what to expect is useful in troubleshooting any suspicious merges.
+- Counting missing rows with left join
+    - Note: A left join will return all of the rows from the left table. If those rows in the left table match multiple rows in the right table, then all of those rows will be returned. Therefore, the returned rows must be equal to if not greater than the left table. Knowing what to expect is useful in troubleshooting any suspicious merges.
+- Right join to find unique movies
+    - movies_and_scifi_only = movies.merge(scifi_only, left_on="id", right_on="movie_id")
+    - how to subset for missing dataframes notes:
+        - action_movies = movie_to_genres[movie_to_genres["genre"]== "Action"]
+- Popular genres with right join
+    - genres_movies = movie_to_genres.merge(pop_movies, how='right', 
+                                      left_on="movie_id", 
+                                      right_on="id")
+- Using outer join to select actors
+    - iron_1_and_2 = iron_1_actors.merge(iron_2_actors,
+                                     on="id",
+                                     how="outer",
+                                     suffixes=('_1','_2'))
