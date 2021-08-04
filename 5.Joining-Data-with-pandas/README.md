@@ -41,3 +41,10 @@ Being able to combine and work with multiple datasets is an essential skill for 
                                      on="id",
                                      how="outer",
                                      suffixes=('_1','_2'))
+- Self join
+    - merging tables together
+    - crews.merge(crews, on='id', how='inner',
+                                suffixes=('_dir','_crew'))
+- How does pandas handle self joins?
+- Index merge for movie ratings
+- Do sequels earn more?
