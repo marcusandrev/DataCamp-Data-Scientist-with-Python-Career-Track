@@ -48,3 +48,12 @@ Being able to combine and work with multiple datasets is an essential skill for 
 - How does pandas handle self joins?
 - Index merge for movie ratings
 - Do sequels earn more?
+
+## Advance Merging and Concantenating
+- Steps of a semi-join
+- Performing an anti-join
+    - empl_cust = employees.merge(top_cust, on='srid', 
+                            how='left', indicator=True)
+    - srid_list = empl_cust.loc[empl_cust['_merge'] == 'left_only', 'srid']
+    - print(employees[employees['srid'].isin(srid_list)])
+- Performing a semi-join
