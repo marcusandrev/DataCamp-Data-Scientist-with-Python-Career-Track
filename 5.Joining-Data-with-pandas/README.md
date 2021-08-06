@@ -57,3 +57,18 @@ Being able to combine and work with multiple datasets is an essential skill for 
     - srid_list = empl_cust.loc[empl_cust['_merge'] == 'left_only', 'srid']
     - print(employees[employees['srid'].isin(srid_list)])
 - Performing a semi-join
+- Concatenation basics
+    - tracks_from_albums = pd.concat([tracks_master,tracks_ride,tracks_st],
+                               sort=True)
+    - tracks_from_albums = pd.concat([tracks_master,tracks_ride,tracks_st],
+                               ignore_index=True,
+                               sort=True)
+    - tracks_from_albums = pd.concat([tracks_master,tracks_ride,tracks_st],
+                               join="inner",
+                               sort=True)
+- Concatenating with keys
+    - inv_jul_thr_sep = pd.concat([inv_jul,inv_aug,inv_sep], 
+                            keys=["7Jul", "8Aug", "9Sep"])
+- Using the append method
+    - metallica_tracks = tracks_ride.append([tracks_master, tracks_st], sort=False)
+- Concatenate and merge to find common songs
