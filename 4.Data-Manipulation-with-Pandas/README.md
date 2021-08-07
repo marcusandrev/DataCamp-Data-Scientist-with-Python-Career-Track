@@ -1,4 +1,4 @@
-![cert](https://github.com/marcusandrev/DataCamp-Data-Scientist-with-Python-Career-Track/blob/main/3.Data-Manipulation-with-Pandas/certificate-DMWP.pdf)
+![cert](https://github.com/marcusandrev/DataCamp-Data-Scientist-with-Python-Career-Track/blob/main/4.Data-Manipulation-with-Pandas/certificates/certificate-DMWP-1.jpg)
 
 # Data Manipulation with Pandas
 ### Course Description
