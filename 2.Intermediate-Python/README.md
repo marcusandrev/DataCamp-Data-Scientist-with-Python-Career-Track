@@ -1,0 +1,1 @@
+![cert](https://github.com/marcusandrev/DataCamp-Data-Scientist-with-Python-Career-Track/blob/main/2.Intermediate-Python/certificate-IntermediatePython.pdf)
