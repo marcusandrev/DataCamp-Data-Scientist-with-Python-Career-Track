@@ -80,3 +80,21 @@ Being able to combine and work with multiple datasets is an essential skill for 
 - Phillips curve using merge_ordered()
 - merge_ordered() caution, multiple columns
     - date_ctry = pd.merge_ordered(gdp, pop, on=["country","date"], fill_method="ffill")
+- Using merge_asof() to create dataset
+- merge_asof() and merge_ordered() differences
+    - merge_asof()
+        - Has an argument that can be set to 'forward' to select th first row in the right table whose key column is greater than or equal to the left's
+        - it can be used to do fuzzy matching of dates between tables
+        - after matching two tables, if there are missing values at the top of the table from the right table, this function can fill them in
+    - .merge_ordered
+        - it allows for a right join during the merge
+        - if it cannot match the rows of the tables exactly, it can use forward fill to interpolate the missing data
+    - both
+        - this function can set the suffix for overlapping column names
+        - this function can be used when working with ordered or time-series data
+- Explore financials with .query()
+- Subsetting rows with .query()
+    - recent_gdp_pop = gdp_pivot.query('date >= "1991-01-01"')
+- Using .melt() to reshape government data
+    - ur_tall = ur_wide.melt(id_vars=["year"], var_name='month', value_name='unempl_rate')
+- Using .melt() for stocks vs bond performance
