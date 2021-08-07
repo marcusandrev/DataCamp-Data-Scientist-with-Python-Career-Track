@@ -72,3 +72,11 @@ Being able to combine and work with multiple datasets is an essential skill for 
 - Using the append method
     - metallica_tracks = tracks_ride.append([tracks_master, tracks_st], sort=False)
 - Concatenate and merge to find common songs
+
+## Merging Ordered and Time-Series Data
+- Correlation between GDP and S&P500
+    - gdp_sp500 = pd.merge_ordered(gdp, sp500, left_on='Year', right_on='Date', 
+                             how='left',  fill_method='ffill')
+- Phillips curve using merge_ordered()
+- merge_ordered() caution, multiple columns
+    - date_ctry = pd.merge_ordered(gdp, pop, on=["country","date"], fill_method="ffill")
