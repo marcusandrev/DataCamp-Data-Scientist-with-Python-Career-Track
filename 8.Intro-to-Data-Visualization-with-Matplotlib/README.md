@@ -21,3 +21,28 @@ Visualizing data in plots and figures exposes the underlying patterns in the dat
     - ax[0].plot(seattle_weather['MONTH'], seattle_weather['MLY-PRCP-NORMAL'], color = 'b')
     - ax[0].plot(seattle_weather['MONTH'], seattle_weather["MLY-PRCP-25PCTL"], color = 'b', linestyle = '--')
     - ax[0].plot(seattle_weather['MONTH'], seattle_weather['MLY-PRCP-75PCTL'], color = 'b', linestyle = '--')
+
+## Plotting time-series
+- Read data with a time index
+    - climate_change = pd.read_csv("climate_change.csv", parse_dates=["date"], index_col="date")
+- Plot time-series data
+    - ax.plot(climate_change.index, climate_change["relative_temp"])
+    - ax.set_xlabel("Time")
+    - ax.set_ylabel("Relative temperature (Celsius)")
+- Using a time index to zoom in
+    - seventies = climate_change["1970-01-01":"1979-12-31"]
+- Plotting two variables
+    - ax.plot(climate_change.index, climate_change["co2"], color='blue')
+    - ax2 = ax.twinx()
+    - ax2.plot(climate_change.index, climate_change["relative_temp"], color='red')
+- Defining a function that plots time-series data
+    - def plot_timeseries(axes, x, y, color, xlabel, ylabel):
+    - axes.plot(x, y, color=color)
+    - axes.set_xlabel(xlabel)
+    - axes.set_ylabel(ylabel, color=color)
+    - axes.tick_params('y', colors=color)
+- Using a plotting function
+    - plot_timeseries(ax, climate_change.index, climate_change["co2"], "blue", "Time (years)", "CO2 levels")
+- Annotating a plot of time-series data
+    - ax.annotate('>1 degree', (pd.Timestamp('2015-10-06'), 1))
+- Plotting time-series: putting it all together
