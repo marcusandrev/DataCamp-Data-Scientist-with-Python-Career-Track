@@ -3,6 +3,7 @@
 Visualizing data in plots and figures exposes the underlying patterns in the data and provides insights. Good visualizations also help you communicate your data to others, and are useful to data analysts and other consumers of the data. In this course, you will learn how to use Matplotlib, a powerful Python data visualization library. Matplotlib provides the building blocks to create rich visualizations of many different kinds of datasets. You will learn how to create visualizations for different kinds of data and how to customize, automate, and share these visualizations.
 
 ## Introduction to Matplotlib
+This chapter introduces the Matplotlib visualization library and demonstrates how to use it with data.
 - Using the matplotlib.pyplot interface
     - fig, ax = plt.subplots()
     - plt.show()
@@ -23,6 +24,7 @@ Visualizing data in plots and figures exposes the underlying patterns in the dat
     - ax[0].plot(seattle_weather['MONTH'], seattle_weather['MLY-PRCP-75PCTL'], color = 'b', linestyle = '--')
 
 ## Plotting time-series
+Time series data is data that is recorded. Visualizing this type of data helps clarify trends and illuminates relationships between data.
 - Read data with a time index
     - climate_change = pd.read_csv("climate_change.csv", parse_dates=["date"], index_col="date")
 - Plot time-series data
@@ -46,3 +48,28 @@ Visualizing data in plots and figures exposes the underlying patterns in the dat
 - Annotating a plot of time-series data
     - ax.annotate('>1 degree', (pd.Timestamp('2015-10-06'), 1))
 - Plotting time-series: putting it all together
+
+## Quantitative comparisons and statistical visualizations
+Visualizations can be used to compare data in a quantitative manner. This chapter explains several methods for quantitative visualizations.
+- Bar chart
+    - ax.bar(medals.index, medals["Gold"])
+    - ax.set_xticklabels(medals.index, rotation=90)
+    - ax.set_ylabel("Number of medals")
+- Creating histograms
+    - ax.hist(mens_rowing["Weight"])
+    - ax.hist(mens_gymnastics["Weight"])
+    - ax.set_xlabel("Weight (kg)")
+    - ax.set_ylabel("# of observations")
+- "Step" histogram
+    - ax.hist(mens_rowing["Weight"], label='Rowing', histtype="step", bins=5)
+- Adding error-bars to a bar char
+    - ax.bar("Rowing", mens_rowing["Height"].mean(), yerr=mens_rowing["Height"].std())
+- Adding error-bars to a plot
+    - ax.errorbar(seattle_weather["DATE"], seattle_weather["MLY-TAVG-NORMAL"], yerr=seattle_weather["MLY-TAVG-STDDEV"])
+- Creating boxplots
+    - ax.boxplot([mens_rowing["Height"], mens_gymnastics["Height"]])
+- Simple scatter plot
+    - ax.scatter(climate_change["co2"], climate_change["relative_temp"])
+- Encoding time by color
+    - ax.scatter(climate_change["co2"], climate_change["relative_temp"], c=climate_change.index)
+    
