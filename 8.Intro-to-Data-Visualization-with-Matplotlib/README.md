@@ -1,3 +1,5 @@
+![cert](certificate/IDVM-certificate-1.jpg)
+
 # Introduction to Data Visualization with Matplotlib
 ### Course Description
 Visualizing data in plots and figures exposes the underlying patterns in the data and provides insights. Good visualizations also help you communicate your data to others, and are useful to data analysts and other consumers of the data. In this course, you will learn how to use Matplotlib, a powerful Python data visualization library. Matplotlib provides the building blocks to create rich visualizations of many different kinds of datasets. You will learn how to create visualizations for different kinds of data and how to customize, automate, and share these visualizations.
@@ -72,4 +74,17 @@ Visualizations can be used to compare data in a quantitative manner. This chapte
     - ax.scatter(climate_change["co2"], climate_change["relative_temp"])
 - Encoding time by color
     - ax.scatter(climate_change["co2"], climate_change["relative_temp"], c=climate_change.index)
-    
+
+## Sharing visualizations with others
+This chapter shows you how to share your visualizations with others: how to save your figures as files, how to adjust their look and feel, and how to automate their creation based on input data.
+- Switching between styles
+    - plt.style.use("Solarize_Light2")
+- Saving a file several times
+    - fig.savefig("my_figure.png")
+    - fig.savefig("my_figure_300dpi.png", dpi=300)
+- Unique values of a column
+    - sports = sports_column.unique()
+- Automate your visualization
+    - for sport in sports:
+    - sport_df = summer_2016_medals[summer_2016_medals['Sport']== sport]
+    - ax.bar(sport, sport_df["Weight"].mean(), yerr=sport_df["Weight"].std())
