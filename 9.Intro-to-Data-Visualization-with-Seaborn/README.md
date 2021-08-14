@@ -23,6 +23,33 @@ What is Seaborn, and when should you use it? In this chapter, you will find out!
 ## Visualizing Two Quantitative Variables
 In this chapter, you will create and customize plots that visualize the relationship between two quantitative variables. To do this, you will use scatter plots and line plots to explore how the level of air pollution in a city changes over the course of a day and how horsepower relates to fuel efficiency in cars. You will also see another big advantage of using Seaborn - the ability to easily create subplots in a single figure!
 
+- Creating subplots with col and row
+    - sns.relplot(x="absences", y="G3", 
+            data=student_data,
+            kind="scatter", 
+            col="study_time",row="study_time")
+- Creating two-factor subplots
+    - sns.relplot(x="G1", y="G3", 
+            data=student_data,
+            kind="scatter", 
+            col="schoolsup",
+            col_order=["yes", "no"],           row="famsup", 
+            row_order=["yes","no"])
+- Changing the size of scatter plot points
+    - sns.relplot(x="horsepower", y="mpg", 
+            data=mpg, kind="scatter", 
+            size="cylinders", hue="cylinders"
+- Interpreting line plots
+    - sns.relplot(x="model_year", y="mpg", kind="line", data=mpg)
+- Visualizing standard deviation with line plots
+    - sns.relplot(x="model_year", y="mpg",
+            data=mpg, kind="line", ci="sd")
+- Plotting subgroups in line plots
+    - sns.relplot(x="model_year", y="horsepower", 
+            data=mpg, kind="line", 
+            ci=None, style="origin", 
+            hue="origin", markers=True, dashes=False)
+
 ## Visualizing a Categorical and a Quantitative Variable
 Categorical variables are present in nearly every dataset, but they are especially prominent in survey data. In this chapter, you will learn how to create and customize categorical plots such as box plots, bar plots, count plots, and point plots. Along the way, you will explore survey data from young people about their interests, students about their study habits, and adult men about their feelings about masculinity.
 
