@@ -52,6 +52,50 @@ In this chapter, you will create and customize plots that visualize the relation
 
 ## Visualizing a Categorical and a Quantitative Variable
 Categorical variables are present in nearly every dataset, but they are especially prominent in survey data. In this chapter, you will learn how to create and customize categorical plots such as box plots, bar plots, count plots, and point plots. Along the way, you will explore survey data from young people about their interests, students about their study habits, and adult men about their feelings about masculinity.
+- Count plots
+    - sns.catplot(y="Internet usage", data=survey_data,
+            kind="count", col="Age")
+- Bar plots with percentages
+    - sns.catplot(x="Gender", y="Interested in Math", data=survey_data, kind="bar")
+- Customizing bar plots
+    - sns.catplot(x="study_time", y="G3",
+            data=student_data,
+            kind="bar",
+            order=["<2 hours", 
+                   "2 to 5 hours", 
+                   "5 to 10 hours", 
+                   ">10 hours"],
+              ci=None)
+- Create and interpret a box plot
+    - sns.catplot(x="study_time", y="G3", data=student_data, order=study_time_order, kind="box")
+- Omitting outliers
+    - sns.catplot(x="internet", y="G3", data=student_data, kind="box", col="location", hue="location", sym="")
+- Adjusting the whiskers
+    - sns.catplot(x="romantic", y="G3",
+            data=student_data,
+            kind="box", whis=0.5)
+    - sns.catplot(x="romantic", y="G3",
+            data=student_data,
+            kind="box",
+            whis=[5,95])
+    - sns.catplot(x="romantic", y="G3",
+            data=student_data,
+            kind="box",
+            whis=[0, 100])
+- Customizing point plots
+    - sns.catplot(x="famrel", y="absences",
+			data=student_data,
+            kind="point", capsize=0.2)
+    - sns.catplot(x="famrel", y="absences",
+			data=student_data,
+            kind="point",
+            capsize=0.2, join=False)
+- Point plots with subgroups
+    - sns.catplot(x="romantic", y="absences",
+			data=student_data,
+            kind="point",
+            hue="school",
+            ci=None, estimator=median)
 
 ## Customizing Seaborn Plots
 In this final chapter, you will learn how to add informative plot titles and axis labels, which are one of the most important parts of any data visualization! You will also learn how to customize the style of your visualizations in order to more quickly orient your audience to the key takeaways. Then, you will put everything you have learned together for the final exercises of the course!
