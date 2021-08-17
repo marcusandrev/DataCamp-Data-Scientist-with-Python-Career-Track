@@ -1,3 +1,5 @@
+![cert](certificate/IDVS-certificate-1.jpg)
+
 # Introduction to Data Visualization with Seaborn
 ### Course Description
 Seaborn is a powerful Python library that makes it easy to create informative and attractive visualizations. This course provides an introduction to Seaborn and teaches you how to visualize your data using plots such as scatter plots, box plots, and bar plots. You’ll do this while exploring survey responses about student hobbies and the factors that are associated with academic success. You’ll also learn about some of Seaborn’s advantages as a statistical visualization tool, such as how it automatically calculates confidence intervals. By the end of the course, you will be able to use Seaborn in a variety of situations to explore your data and effectively communicate the results of your data analyses to others.
@@ -99,3 +101,21 @@ Categorical variables are present in nearly every dataset, but they are especial
 
 ## Customizing Seaborn Plots
 In this final chapter, you will learn how to add informative plot titles and axis labels, which are one of the most important parts of any data visualization! You will also learn how to customize the style of your visualizations in order to more quickly orient your audience to the key takeaways. Then, you will put everything you have learned together for the final exercises of the course!
+- Changing style and palette
+    - sns.set_style("whitegrid")
+    - sns.set_palette("Purples")
+- Changing the scale
+    - sns.set_context("poster")
+    - sns.set_context("paper")
+    - sns.set_context("notebook")
+    - sns.set_context("talk")
+- Using a custom palette
+    - sns.set_palette(["#39A7D0", "#36ADA4"])
+- Adding a title to a FacetGrid object
+    - g.fig.suptitle("Car Weight vs. Horsepower")
+- Adding a title and axis labels
+    - g.set(xlabel="Car Model Year", ylabel="Average MPG")
+    - g.set_title("Average MPG Over Time")
+- Rotating x-tick labels
+    - plt.xticks(rotation=90)
+- Box plot with subgroups
