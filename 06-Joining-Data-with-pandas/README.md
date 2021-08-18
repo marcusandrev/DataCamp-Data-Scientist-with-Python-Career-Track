@@ -1,4 +1,4 @@
-![cert](https://github.com/marcusandrev/DataCamp-Data-Scientist-with-Python-Career-Track/blob/main/6.Joining-Data-with-pandas/certificates/JDWP-certificate-1.jpg)
+![cert](certificates/JDWP-certificate-1.jpg)
 
 # Joining Data with pandas
 ### Course Description
