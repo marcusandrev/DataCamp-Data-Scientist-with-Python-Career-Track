@@ -1,4 +1,4 @@
-
+![cert](certificate/PDST1-certificate-page-001.jpg)
 
 # Python Data Science Toolbox (Part 1)
 ### Course Description
