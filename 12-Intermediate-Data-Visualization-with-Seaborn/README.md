@@ -5,7 +5,6 @@ Do you want to make beautiful, informative visualizations with ease? If so, then
 ## Seaborn Introduction
 Introduction to the Seaborn library and where it fits in the Python visualization landscape.
 
-
 ## Customizing Seaborn Plots
 Overview of functions for customizing the display of Seaborn plots.
 
