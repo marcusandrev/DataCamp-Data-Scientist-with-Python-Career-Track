@@ -1,4 +1,4 @@
-![cert](certificate/InIDP-certificate_page-0001.jpg)
+![cert](certificates/InIDP-certificate_page-0001.jpg)
 
 # Introduction to Importing Data in Python
 ### Course Description
